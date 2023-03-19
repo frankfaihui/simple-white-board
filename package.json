@@ -1,0 +1,20 @@
+{
+  "name": "simple-white-board",
+  "version": "1.0.0",
+  "description": "a simple canvas white board for drawing",
+  "keywords": [
+    "white board",
+    "sketchpad",
+    "paint"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "test"
+  },
+  "author": "frankfaihui",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.0.2"
+  }
+}
