@@ -1,6 +1,10 @@
 {
   "name": "simple-white-board",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frankfaihui/simple-white-board"
+  },
   "description": "a simple canvas white board for drawing",
   "keywords": [
     "white board",
@@ -10,7 +14,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "test"
+    "test": "test",
+    "prepublish": "npm run build"
   },
   "author": "frankfaihui",
   "license": "ISC",
