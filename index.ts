@@ -11,12 +11,17 @@ export default class SimpleWhiteBoard {
     this.canvas.addEventListener('mousemove', this.draw);
     this.canvas.addEventListener('mousedown', this.startDraw);
     this.canvas.addEventListener('mouseup', this.endDraw);
+
+    // for mobile
+    this.canvas.addEventListener('touchmove', this.drawTouch);
   }
 
   dispose = () => {
     this.canvas.removeEventListener('mousemove', this.draw);
     this.canvas.removeEventListener('mousedown', this.startDraw);
     this.canvas.removeEventListener('mouseup', this.endDraw);
+
+    this.canvas.removeEventListener('touchmove', this.drawTouch);
   }
 
   private startDraw = (event: MouseEvent) => {
@@ -36,6 +41,17 @@ export default class SimpleWhiteBoard {
 
     this.ctx.lineTo(event.offsetX, event.offsetY);
     this.ctx.stroke();
+  }
+
+  private drawTouch = (event: TouchEvent) => {
+    if (event.touches.length === 1) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    if (event.touches.length > 1) {
+      this.drawing = false;
+    }
   }
 
   private endDraw = () => {
