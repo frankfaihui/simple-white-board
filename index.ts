@@ -8,18 +8,18 @@ export default class SimpleWhiteBoard {
     this.ctx.lineJoin = 'round';
 
     this.canvas.style.backgroundColor = 'white';
-    this.canvas.addEventListener('mousemove', this.draw);
-    this.canvas.addEventListener('mousedown', this.startDraw);
-    this.canvas.addEventListener('mouseup', this.endDraw);
+    this.canvas.addEventListener('pointermove', this.draw);
+    this.canvas.addEventListener('pointerdown', this.startDraw);
+    this.canvas.addEventListener('pointerup', this.endDraw);
 
     // for mobile
     this.canvas.addEventListener('touchmove', this.drawTouch);
   }
 
   dispose = () => {
-    this.canvas.removeEventListener('mousemove', this.draw);
-    this.canvas.removeEventListener('mousedown', this.startDraw);
-    this.canvas.removeEventListener('mouseup', this.endDraw);
+    this.canvas.removeEventListener('pointermove', this.draw);
+    this.canvas.removeEventListener('pointerdown', this.startDraw);
+    this.canvas.removeEventListener('pointerup', this.endDraw);
 
     this.canvas.removeEventListener('touchmove', this.drawTouch);
   }
